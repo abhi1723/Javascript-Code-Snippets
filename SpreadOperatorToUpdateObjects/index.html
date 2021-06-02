@@ -1,0 +1,40 @@
+<script>
+    const obj =
+   {
+    btyxlj: {
+      id: 'btyxlj',
+      text: 'What is a jQuery?',
+      author: {
+        name: 'Tyler McGinnis',
+        id: 'tylermcginnis',
+        avatar: 'twt.com/tm.png'
+      }   
+    },
+    zxcvbn: {
+      id: 'zxcvbn',
+      text: 'What is a Java?',
+      author: {
+        name: 'Kumar Abhishek',
+        id: 'akuma298',
+        avatar: 'twt.com/sethu.png'
+      }   
+    }
+  }  
+
+function updateObject(tweetId){
+    const updatedObj = {
+    ...obj,
+    [tweetId]:{
+        ...obj[tweetId],
+        author:{
+            ...obj[tweetId].author,
+            avatar: 'twt.com/abhi.png'
+        }
+        
+    }
+}
+console.log("Orignal Obj : ",obj);
+console.log("Updated Obj : ",updatedObj);
+}
+updateObject('btyxlj');
+</script>
