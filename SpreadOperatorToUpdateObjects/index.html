@@ -29,12 +29,32 @@ function updateObject(tweetId){
         author:{
             ...obj[tweetId].author,
             avatar: 'twt.com/abhi.png'
-        }
-        
+        }    
     }
 }
 console.log("Orignal Obj : ",obj);
 console.log("Updated Obj : ",updatedObj);
+
+}
+function updateObjectFunctional(tweetId){
+    const updatedObj = {
+    ...obj,
+    [tweetId]: updateTweet(obj[tweetId])
+}
+console.log("Newly updated obj",updatedObj);
+}
+function updateTweet(obj){
+    return {
+        ...obj,
+        author: updatedAuthor(obj.author)
+    }
+}
+function updatedAuthor(obj){
+    return {
+        ...obj,
+        avatar: 'twt.com/zinda.png'
+    }
 }
 updateObject('btyxlj');
+updateObjectFunctional('btyxlj');
 </script>
